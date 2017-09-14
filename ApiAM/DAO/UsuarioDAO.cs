@@ -1,0 +1,58 @@
+﻿using ApiAM.Context;
+using ApiAM.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace ApiAM.DAO
+{
+    public static class UsuarioDAO
+    {
+        public static List<Usuario> Listar()
+        {
+            using (UsuarioContexto ctx = new UsuarioContexto())
+            {
+                return ctx.Usuario.ToList();
+            }
+        }
+        public static void Cadastrar(Usuario usuario)
+        {
+            using (UsuarioContexto ctx = new UsuarioContexto())
+            {
+                ctx.Usuario.Add(usuario);
+                ctx.SaveChanges();
+            }
+        }
+        public static void Editar(int Id,Usuario usuario)
+        {
+            using (UsuarioContexto ctx = new UsuarioContexto())
+            {
+                Usuario user = ctx.Usuario.Find(Id);
+
+                user.Nome = usuario.Nome;
+                user.Senha = usuario.Senha;
+                user.Sexo = usuario.Sexo;
+                user.IdConta = usuario.IdConta;
+                user.Cpf = usuario.Cpf;
+                user.Celular = usuario.Celular;
+                ctx.SaveChanges();
+            }
+        }
+        public static void Deletar(int Id)
+        {
+            using (UsuarioContexto ctx = new UsuarioContexto())
+            {
+                ctx.Usuario.Remove(ctx.Usuario.Find(Id));
+                ctx.SaveChanges();
+            }
+        }
+        public static Usuario PesquisarId(int Id)
+        {
+            using (UsuarioContexto ctx = new UsuarioContexto())
+            {
+                return ctx.Usuario.Find(Id);
+            }
+        }
+    }
+}
