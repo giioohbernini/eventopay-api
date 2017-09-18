@@ -127,14 +127,18 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Context\EventoContexto.cs" />
+    <Compile Include="Context\TransacaoContexto.cs" />
     <Compile Include="Controllers\EventoController.cs" />
+    <Compile Include="Controllers\TransacaoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAO\EventoDAO.cs" />
+    <Compile Include="DAO\TransacaoDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Evento.cs" />
+    <Compile Include="Models\Transacao.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Context\UsuarioContexto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

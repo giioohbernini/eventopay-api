@@ -1,19 +1,23 @@
 ﻿using ApiAM.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
+using System.Web.Services;
+using System.Web.SessionState;
 
 namespace ApiAM.Controllers
 {
+
     public class UsuarioController : ApiController
     {
-        // GET: api/Usuario
-        public IEnumerable<Usuario> Get()
-        {
 
+        public IEnumerable<Usuario> Get()
+        { 
             return DAO.UsuarioDAO.Listar();
         }
 

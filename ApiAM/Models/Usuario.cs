@@ -13,8 +13,8 @@ namespace ApiAM.Models
         public string Sexo { get; set; }
         public string Cpf { get; set; }
         public string Celular { get; set; }
-        public int IdConta { get; set; }
-
-
+        public double Saldo { get; set; }
+        public ICollection<Transacao> Transacoes { get; set; }
+        public ICollection<Evento> Eventos { get; set; }
     }
 }

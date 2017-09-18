@@ -33,7 +33,6 @@ namespace ApiAM.DAO
                 user.Nome = usuario.Nome;
                 user.Senha = usuario.Senha;
                 user.Sexo = usuario.Sexo;
-                user.IdConta = usuario.IdConta;
                 user.Cpf = usuario.Cpf;
                 user.Celular = usuario.Celular;
                 ctx.SaveChanges();
