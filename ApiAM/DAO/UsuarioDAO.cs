@@ -60,12 +60,12 @@ namespace ApiAM.DAO
                 return ctx.Usuario.Where(a => a.Nome == nome && a.Senha == senha).FirstOrDefault();
             }
         }
-        public static void ComprarCredito(int IdUsuario, double valor)
+        public static void ComprarCredito(int IdUsuario, double Valor)
         {
             using (UsuarioContexto ctx = new UsuarioContexto())
             {
                 Usuario user = ctx.Usuario.Find(IdUsuario);
-                user.Saldo += valor;
+                user.Saldo += Valor;
                 ctx.SaveChanges();
             }
         }
