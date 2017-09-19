@@ -52,5 +52,15 @@ namespace ApiAM.DAO
                 return ctx.Evento.Find(Id);
             }
         }
+
+        public static List<Evento> ListarEventos(int Id_usuario)
+        {
+            using (UsuarioContexto ctx = new UsuarioContexto())
+            {
+                Usuario _usuario = ctx.Usuario.Find(Id_usuario);
+                return _usuario.Eventos.ToList();
+            }
+        }
+
     }
 }

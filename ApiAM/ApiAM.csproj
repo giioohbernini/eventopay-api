@@ -128,7 +128,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Context\EventoContexto.cs" />
     <Compile Include="Context\TransacaoContexto.cs" />
+    <Compile Include="Controllers\CreditoController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TransacaoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAO\EventoDAO.cs" />

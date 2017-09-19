@@ -24,7 +24,6 @@ namespace ApiAM.Controllers
         // GET: api/Usuario/5
         public Usuario Get(int id)
         {
-
             return DAO.UsuarioDAO.PesquisarId(id);
         }
 

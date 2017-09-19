@@ -53,5 +53,22 @@ namespace ApiAM.DAO
                 return ctx.Usuario.Find(Id);
             }
         }
+        public static Usuario Login(string nome,string senha)
+        {
+            using (UsuarioContexto ctx = new UsuarioContexto())
+            {
+                return ctx.Usuario.Where(a => a.Nome == nome && a.Senha == senha).FirstOrDefault();
+            }
+        }
+        public static void ComprarCredito(int IdUsuario, double valor)
+        {
+            using (UsuarioContexto ctx = new UsuarioContexto())
+            {
+                Usuario user = ctx.Usuario.Find(IdUsuario);
+                user.Saldo += valor;
+                ctx.SaveChanges();
+            }
+        }
+
     }
 }

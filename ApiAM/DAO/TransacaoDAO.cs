@@ -24,6 +24,8 @@ namespace ApiAM.DAO
 
             if ((_usuario.Saldo-transacao.Valor)>=0)
             {
+                _adm.Saldo += transacao.Valor;
+                _usuario.Saldo -= transacao.Valor;
                 DAO.UsuarioDAO.Editar(_usuario.Id, _usuario);
                 DAO.UsuarioDAO.Editar(_adm.Id, _adm);
                 using (TransacaoContexto ctx = new TransacaoContexto())
@@ -54,11 +56,11 @@ namespace ApiAM.DAO
                 ctx.SaveChanges();
             }
         }
-        public static Transacao PesquisarId(int Id)
+        public static List<Transacao> PesquisarIdUsuario(int Id_usuario)
         {
             using (TransacaoContexto ctx = new TransacaoContexto())
             {
-                return ctx.Transacao.Find(Id);
+                return ctx.Transacao.Where(a => a.Id_Usuario == Id_usuario).ToList();
             }
         }
     }

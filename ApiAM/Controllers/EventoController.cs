@@ -13,15 +13,13 @@ namespace ApiAM.Controllers
         // GET: api/Evento
         public IEnumerable<Evento> Get()
         {
-
             return DAO.EventoDAO.Listar();
         }
 
         // GET: api/Evento/5
-        public Evento Get(int id)
+        public IEnumerable<Evento> Get(int id)
         {
-
-            return DAO.EventoDAO.PesquisarId(id);
+            return DAO.EventoDAO.ListarEventos(id);
         }
 
         // POST: api/Evento
