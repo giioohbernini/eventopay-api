@@ -1,5 +1,6 @@
 ﻿using ApiAM.Context;
 using ApiAM.Models;
+using ApiAM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,12 +59,26 @@ namespace ApiAM.DAO
                 ctx.SaveChanges();
             }
         }
-        public static List<Transacao> PesquisarIdUsuario(int Id_usuario)
+        public static List<TransacaoViewModel> PesquisarIdUsuario(int Id_usuario)
         {
+            List<Transacao> _transacoes;
             using (TransacaoContexto ctx = new TransacaoContexto())
             {
-                return ctx.Transacao.Where(a => a.Id_Usuario == Id_usuario).ToList();
+                _transacoes= ctx.Transacao.Where(a => a.Id_Usuario == Id_usuario).ToList();
             }
+            List<TransacaoViewModel> _transacoesViewModel= new List<TransacaoViewModel>();
+            foreach (var item in _transacoes)
+            {
+                _transacoesViewModel.Add(new TransacaoViewModel() {
+                    Id =item.Id,
+                    Id_Evento =item.Id_Evento,
+                    Id_Usuario =item.Id_Usuario,
+                    Valor=item.Valor,
+                NomeEvento = DAO.EventoDAO.PesquisarId(item.Id_Evento).Nome.ToString()
+            });
+            }
+            return _transacoesViewModel;
+
         }
     }
 }

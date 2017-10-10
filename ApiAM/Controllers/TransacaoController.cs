@@ -1,4 +1,5 @@
 ﻿using ApiAM.Models;
+using ApiAM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace ApiAM.Controllers
     {
 
         // GET: api/Transacao/5
-        public List<Transacao> Get(int id_usuario)
+        public List<TransacaoViewModel> Get(int id_usuario)
         {
             return DAO.TransacaoDAO.PesquisarIdUsuario(id_usuario);
         }
