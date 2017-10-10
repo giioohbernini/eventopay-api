@@ -28,6 +28,8 @@ namespace ApiAM.DAO
                 _usuario.Saldo -= transacao.Valor;
                 DAO.UsuarioDAO.Editar(_usuario.Id, _usuario);
                 DAO.UsuarioDAO.Editar(_adm.Id, _adm);
+                _evento.ValorTotal += transacao.Valor;
+                DAO.EventoDAO.Editar(_evento.Id, _evento);
                 using (TransacaoContexto ctx = new TransacaoContexto())
                 {
                     ctx.Transacao.Add(transacao);

@@ -11,6 +11,7 @@ namespace ApiAM.Models
         public int Id_adm { get; set; }
         public double ValorTotal { get; set; }
         public double ValorSugerido { get; set; }
+        public string Nome { get; set; }
         public string Descricao { get; set; }
         public string Local { get; set; }
         public ICollection<Transacao> Transacoes { get; set; }

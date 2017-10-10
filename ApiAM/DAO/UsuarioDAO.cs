@@ -35,6 +35,7 @@ namespace ApiAM.DAO
                 user.Sexo = usuario.Sexo;
                 user.Cpf = usuario.Cpf;
                 user.Celular = usuario.Celular;
+                user.Saldo = usuario.Saldo;
                 ctx.SaveChanges();
             }
         }
