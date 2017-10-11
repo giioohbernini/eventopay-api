@@ -61,7 +61,7 @@ namespace ApiAM.DAO
         }
         public static List<TransacaoViewModel> PesquisarIdUsuario(int Id_usuario)
         {
-            List<Transacao> _transacoes;
+            List<Transacao> _transacoes=new List<Transacao>();
             using (TransacaoContexto ctx = new TransacaoContexto())
             {
                 _transacoes= ctx.Transacao.Where(a => a.Id_Usuario == Id_usuario).ToList();

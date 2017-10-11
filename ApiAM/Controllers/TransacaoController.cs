@@ -13,9 +13,9 @@ namespace ApiAM.Controllers
     {
 
         // GET: api/Transacao/5
-        public List<TransacaoViewModel> Get(int id_usuario)
+        public List<TransacaoViewModel> Get(int id)
         {
-            return DAO.TransacaoDAO.PesquisarIdUsuario(id_usuario);
+            return DAO.TransacaoDAO.PesquisarIdUsuario(id);
         }
 
         // POST: api/Transacao
